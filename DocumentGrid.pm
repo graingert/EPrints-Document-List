@@ -47,7 +47,6 @@ sub output_list
 	} );
 
 
-
 	my $table = $session->make_element('table');
 	my $tr = $session->make_element('tr');
 	$table->appendChild('tr');
@@ -64,11 +63,13 @@ sub output_list
 			$table->appendChild($tr);
 		}
 	}
+	
+	
 
 	# my $page = '<html><head><title>Document Grid</title><style></style></head><body>' . $table->toString . '</body></html>'; #you should probably do this properly
 #also, the correct way to toString a dom element is EPrints::Utils::tree_to_utf8($dom), but it didn't work here.  No idea why.
 
-	my $page = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><style> a {text-decoration: none; color: black}</style><title>EPrints Document Grid</title></head><body>' . $table->toString . '</body></html>';
+	my $page = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><style> a {text-decoration: none; color: black}</style><title>EPrints Document Grid</title></head><body>' . $table->toString . '</body></html>' . Template::Mustache::render()';
 
 	if( defined $opts{fh} )
 	{
