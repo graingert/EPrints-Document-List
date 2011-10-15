@@ -49,7 +49,7 @@ sub output_list
 
 
 	my $table = $session->make_element('table');
-	my $tr = $session->make_element($tr);
+	my $tr = $session->make_element('tr');
 	$table->appendChild($tr);
 
 	my $i = 0;
