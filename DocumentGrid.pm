@@ -3,9 +3,9 @@ package EPrints::Plugin::Export::DocumentGrid;
 use Unicode::String qw( utf8 );
 
 use EPrints::Plugin::Export;
-use Templates::Mustache;
+use Template::Mustache;
 
-@ISA = qw( EPrints::Plugin::Export Templates::Mustache );
+@ISA = qw( EPrints::Plugin::Export Template::Mustache );
 
 use strict;
 
@@ -50,7 +50,7 @@ sub output_list
 
 	my $table = $session->make_element('table');
 	my $tr = $session->make_element('tr');
-	$table->appendChild('tr');
+	$table->appendChild($tr);
 
 	my $i = 0;
 	foreach (@document_cells)
