@@ -3,7 +3,7 @@ package EPrints::Plugin::Export::DocumentGrid;
 use Unicode::String qw( utf8 );
 
 use EPrints::Plugin::Export;
-use Templates::Mustache
+use Templates::Mustache;
 
 @ISA = qw( EPrints::Plugin::Export Templates::Mustache );
 
