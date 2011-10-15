@@ -3,9 +3,9 @@ package EPrints::Plugin::Export::DocumentGrid;
 use Unicode::String qw( utf8 );
 
 use EPrints::Plugin::Export;
-use Template::Mustache;
+use Text::Xslate;
 
-@ISA = qw( EPrints::Plugin::Export Template::Mustache );
+@ISA = qw( EPrints::Plugin::Export);
 
 use strict;
 
@@ -70,13 +70,23 @@ sub output_list
 	# my $page = '<html><head><title>Document Grid</title><style></style></head><body>' . $table->toString . '</body></html>'; #you should probably do this properly
 #also, the correct way to toString a dom element is EPrints::Utils::tree_to_utf8($dom), but it didn't work here.  No idea why.
 
-	my $page = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><style> a {text-decoration: none; color: black}</style><title>EPrints Document Grid</title></head><body>' . $table->toString . '</body></html>' . $plugin->render();
-
+	my $page = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><style> a {text-decoration: none; color: black}</style><title>EPrints Document Grid</title></head><body>' . $table->toString . '</body></html>';
+	my $xslate = Text::Xslate->new(
+		syntax => "TTerse",
+		module => ['Text::Xslate::Bridge::TT2',]
+	);
+	
+	$page = $page . '<!--' . $xslate->render_string( <<EOT, { foo=> "bar" } ) . "-->";
+The value of foo is '[% foo %]'
+Its length is [% foo.length() %]
+If I perform s/foo/bar/, it becomes [% foo.replace('foo', 'bar') %]
+EOT
+	
 	if( defined $opts{fh} )
 	{
 		print {$opts{fh}} $page;
 	}
-
+	
 	return $page;
 }
 
