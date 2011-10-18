@@ -40,7 +40,7 @@ sub output_list
 		print $io "<dt id='" . $eprint->get_id() . "'>" . $eprint->get_value('title') . "</dt><dd><ul>";
 		
 		foreach my $doc ($eprint->get_all_documents()){
-			print $io "<li><img src='" . $doc->thumbnail_url("small") . "' /></li>";
+			print $io "<li><img src='" . $doc->thumbnail_url("preview") . "' /></li>";
 		}
 		
 		print $io "</ul></dd>";
