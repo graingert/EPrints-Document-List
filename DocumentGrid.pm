@@ -37,7 +37,7 @@ sub output_list
         print $io "<html><head><head><body><ul>";
         
         foreach my $dataobj ($opts{list}->get_records){
-				print $io "<li id=\"$dataobj->get_id()\">$dataobj->get_value('title')<img src=\"$dataobj->get_thumbnail('preview')\" /></li>";
+				print $io "<li id='" . $dataobj->get_id() . ">" . $dataobj->get_value('title') . "<img src='" . $dataobj->get_thumbnail('preview') . "' /></li>";
 		}
 		
 		print $io "</ul></body></html>";
