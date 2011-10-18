@@ -38,27 +38,21 @@ sub output_list
 {
         my ($plugin, %opts) = @_;
 		
-		#print to string if we weren't given a file handler
-		my $io;
 		my $outstring = "";
-		
-        if (defined $opts{fh}){
-			$io = $opts{fh};
-		} else {
-			$io = IO::String->new($outstring)
-		}
-		
-		select($io);
+		my $io = IO::String->new($outstring)
         
-        print "<html><head><head><body><ul>";
+        print $io "<html><head><head><body><ul>";
         
         foreach my $dataobj ($opts{list}->get_records){
 				my $part = $plugin->output_dataobj($dataobj, %opts);
-				print "<li>$part</li>";
+				print $io "<li>$part</li>";
 		}
 		
-		print"</ul></body></html>";
+		print $io "</ul></body></html>";
 		
+		if (defined $opts{fh}){
+			print $opts{fh} $outstring;
+		}
 		return $outstring;
 }
 
