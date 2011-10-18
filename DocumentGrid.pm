@@ -51,7 +51,7 @@ sub output_list
 		print $io "</ul></body></html>";
 		
 		if (defined $opts{fh}){
-			print $opts{fh} $outstring;
+			print {$opts{fh}} $outstring;
 		}
 		return $outstring;
 }
