@@ -48,16 +48,16 @@ sub output_list
 			$io = IO::String->new($outstring)
 		}
 		
-		select($io)
+		select($io);
         
-        print "<html><head><head><body><ul>"
+        print "<html><head><head><body><ul>";
         
         foreach my $dataobj ($opts{list}->get_records){
 				my $part = $plugin->output_dataobj($dataobj, %opts);
-				print "<li>$part</li>"
+				print "<li>$part</li>";
 		}
 		
-		print"</ul></body></html>"
+		print"</ul></body></html>";
 		
 		return $outstring;
 }
