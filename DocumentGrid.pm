@@ -17,7 +17,7 @@ sub new
 	my $self = $class->SUPER::new( %opts );
 
 	$self->{name} = "Document Grid";
-	$self->{accept} = [ 'dataobj/eprint', 'list/eprint' ];
+	$self->{accept} = [ 'list/eprint' ];
 
 	$self->{visible} = "all";
 
@@ -25,13 +25,6 @@ sub new
 	$self->{mimetype} = "text/html; charset=utf-8";
 
 	return $self;
-}
-
-sub output_dataobj
-{
-        my ($plugin, $dataobj) = @_;
-
-        return $dataobj->get_id()."\t".$dataobj->get_value('title')."\n";
 }
 
 sub output_list
@@ -44,8 +37,7 @@ sub output_list
         print $io "<html><head><head><body><ul>";
         
         foreach my $dataobj ($opts{list}->get_records){
-				my $part = $plugin->output_dataobj($dataobj, %opts);
-				print $io "<li>$part</li>";
+				print $io "<li id=\"$dataobj->get_id()\">$dataobj->get_value('title')<img src=\"$dataobj->get_thumbnail('preview')\" /></li>";
 		}
 		
 		print $io "</ul></body></html>";
