@@ -6,9 +6,9 @@
 	</head>
 	<body>
 		<ul>
-		{{#documents}}
-			<li><img src="{{img}}" />{{name}}</li>
-		{{/documents}}
+		for $documents -> $document {
+			<li><img src="{{img}}" /><: $document.name :></li>
+		}
 		</ul>
 	</body>
 </html>
