@@ -37,9 +37,9 @@ sub output_list
 	print $io "<html><head><head><body><dl>";
 	
 	foreach my $eprint ($opts{list}->get_records){
-		print $io "<dt id='" . $dataobj->get_id() . ">" . $dataobj->get_value('title') . "</dt><dd><ul>";
+		print $io "<dt id='" . $eprint->get_id() . ">" . $eprint->get_value('title') . "</dt><dd><ul>";
 		
-		foreach my $doc in $eprint->get_all_documents(){
+		foreach my $doc ($eprint->get_all_documents()){
 			print $io "<li><img src='" . $doc->thumbnail_url("preview") . "' /></li>";
 		}
 		
