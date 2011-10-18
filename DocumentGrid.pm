@@ -39,7 +39,7 @@ sub output_list
         my ($plugin, %opts) = @_;
 		
 		my $outstring = "";
-		my $io = IO::String->new($outstring)
+		my $io = IO::String->new($outstring);
         
         print $io "<html><head><head><body><ul>";
         
