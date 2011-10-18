@@ -29,23 +29,29 @@ sub new
 
 sub output_list
 {
-        my ($plugin, %opts) = @_;
+	my ($plugin, %opts) = @_;
+	
+	my $outstring = "";
+	my $io = IO::String->new($outstring);
+	
+	print $io "<html><head><head><body><dl>";
+	
+	foreach my $eprint ($opts{list}->get_records){
+		print $io "<dt id='" . $dataobj->get_id() . ">" . $dataobj->get_value('title') . "</dt><dd><ul>";
 		
-		my $outstring = "";
-		my $io = IO::String->new($outstring);
-        
-        print $io "<html><head><head><body><ul>";
-        
-        foreach my $dataobj ($opts{list}->get_records){
-				print $io "<li id='" . $dataobj->get_id() . ">" . $dataobj->get_value('title') . "<img src='" . $dataobj->get_thumbnail('preview') . "' /></li>";
+		foreach my $doc in $eprint->get_all_documents(){
+			print $io "<li><img src='" . $doc->thumbnail_url("preview") . "' /></li>";
 		}
 		
-		print $io "</ul></body></html>";
-		
-		if (defined $opts{fh}){
-			print {$opts{fh}} $outstring;
-		}
-		return $outstring;
+		print $io "</ul></dd>";
+	}
+	
+	print $io "</dl></body></html>";
+	
+	if (defined $opts{fh}){
+		print {$opts{fh}} $outstring;
+	}
+	return $outstring;
 }
 
 
