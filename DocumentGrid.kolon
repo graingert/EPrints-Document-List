@@ -10,7 +10,7 @@
 			<dt><: $eprint.get_value("title") :></dt>
 			<dd>
 				<ul>
-				: for $eprint->get_all_documents() -> $doc {
+				: for $eprint.get_all_documents() -> $doc {
 					<li><img src="<: $doc.thumbnail_url('preview') :>"/></li>
 				: }
 				</ul>
