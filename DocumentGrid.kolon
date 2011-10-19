@@ -30,8 +30,10 @@
 		<script type="text/javascript" src="/javascript/jquery.jcoverflip.js"></script>
 		<script>
 			$( function(){
-				$( 'ul' ).jcoverflip();
-			});
+				$( 'ul' ).each(
+					$(this).jcoverflip();
+				)
+			})
     </script>
 	</body>
 </html>
