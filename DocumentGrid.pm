@@ -38,7 +38,7 @@ sub output_list
 	my @eprints = $opts{list}->get_records;
 
 	my $content = $xslate->render("DocumentGrid.kolon", {
-		eprints => @eprints,
+		eprints => \@eprints,
 	});
 	
 	if (defined $opts{fh}){
