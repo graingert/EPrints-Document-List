@@ -3,12 +3,17 @@ package EPrints::Plugin::Export::DocumentGrid;
 use Unicode::String qw( utf8 );
 
 use EPrints::Plugin::Export;
-use IO::String;
 use Text::Xslate;
+
+use FindBin qw($Bin);
 
 @ISA = qw( EPrints::Plugin::Export);
 
 use strict;
+
+my $xslate = Text::Xslate->new(
+    path      => ["$Bin"],
+);
 
 sub new
 {
@@ -30,28 +35,16 @@ sub new
 sub output_list
 {
 	my ($plugin, %opts) = @_;
-	
-	my $outstring = "";
-	my $io = IO::String->new($outstring);
-	
-	print $io "<html><head><head><body><dl>";
-	
-	foreach my $eprint ($opts{list}->get_records){
-		print $io "<dt id='" . $eprint->get_id() . "'>" . $eprint->get_value('title') . "</dt><dd><ul>";
-		
-		foreach my $doc ($eprint->get_all_documents()){
-			print $io "<li><img src='" . $doc->thumbnail_url("preview") . "' /></li>";
-		}
-		
-		print $io "</ul></dd>";
-	}
-	
-	print $io "</dl></body></html>";
+	my @eprints = $opts{list}->get_records;
+
+	my $content = $xslate->render("DocumentGrid.kolon", {
+		eprints => @eprints,
+	});
 	
 	if (defined $opts{fh}){
-		print {$opts{fh}} $outstring;
+		print {$opts{fh}} $content;
 	}
-	return $outstring;
+	return $content;
 }
 
 

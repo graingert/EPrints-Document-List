@@ -1,14 +1,21 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<style> a {text-decoration: none; color: black}</style>
+		<style></style>
 		<title>EPrints Document Grid</title>
 	</head>
 	<body>
-		<ul>
-		for $documents -> $document {
-			<li><img src="{{img}}" /><: $document.name :></li>
-		}
-		</ul>
+		<dl>
+		: for $eprints -> $eprint {
+			<dt><: $eprint.get_value("title") :></dt>
+			<dd>
+				<ul>
+				: for $eprint->get_all_documents() -> $doc {
+					<li><img src="<: $doc.thumbnail_url('preview') :>"/></li>
+				: }
+				</ul>
+			</dd>
+		: }
+		</dl>
 	</body>
 </html>
