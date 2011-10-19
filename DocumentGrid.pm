@@ -35,6 +35,7 @@ sub new
 sub output_list
 {
 	my ($plugin, %opts) = @_;
+<<<<<<< HEAD
 	my @eprints;
 	foreach my $eprint ($opts{list}->get_records()){
 		my @documents;
@@ -49,11 +50,13 @@ sub output_list
 			documents => \@documents,
 		};
 	}
+=======
+	my @eprints = $opts{list}->get_records;
+>>>>>>> 4ada3d556f7fe1e695cb14ba3b655273e9ae2e3d
 
 	my $content = $xslate->render("DocumentGrid.kolon", {
 		eprints => \@eprints,
 	});
-	
 	if (defined $opts{fh}){
 		print {$opts{fh}} $content;
 	}
