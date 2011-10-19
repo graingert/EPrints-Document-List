@@ -38,11 +38,6 @@
 		<script>
 			$( function(){
 				$( '#flip' ).jcoverflip();
-				$( 'ul' ).each(
-					function(index){
-						$(this).jcoverflip()
-					}
-				)
 			})
     </script>
 	</body>
