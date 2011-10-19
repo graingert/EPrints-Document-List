@@ -46,12 +46,12 @@ sub output_list
 		push @eprints, {
 			id => $eprint->get_id(),
 			title => $eprint->get_value("title"),
-			documents => @documents,
+			documents => \@documents,
 		};
 	}
 
 	my $content = $xslate->render("DocumentGrid.kolon", {
-		eprints => @eprints,
+		eprints => \@eprints,
 	});
 	
 	if (defined $opts{fh}){
