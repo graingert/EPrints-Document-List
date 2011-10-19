@@ -35,25 +35,11 @@ sub new
 sub output_list
 {
 	my ($plugin, %opts) = @_;
-	my @eprints;
-	foreach my $eprint ($opts{list}->get_records()){
-		my @documents;
-		foreach my $doc ($eprint->get_all_documents()){
-			push @documents, {
-				img => $doc->thumbnail_url("preview"),
-			};
-		}
-		push @eprints, {
-			id => $eprint->get_id(),
-			title => $eprint->get_value("title"),
-			documents => @documents,
-		};
-	}
+	my @eprints = $opts{list}->get_records;
 
 	my $content = $xslate->render("DocumentGrid.kolon", {
 		eprints => \@eprints,
 	});
-	
 	if (defined $opts{fh}){
 		print {$opts{fh}} $content;
 	}
