@@ -5,14 +5,14 @@ use Unicode::String qw( utf8 );
 use EPrints::Plugin::Export;
 use Text::Xslate;
 
-use FindBin qw($Bin);
+use File::Basename;
 
 @ISA = qw( EPrints::Plugin::Export);
 
 use strict;
-
+my $dirname = dirname(__FILE__);
 my $xslate = Text::Xslate->new(
-    path      => ["$Bin"],
+    path      => ["$dirname"],
 );
 
 sub new
