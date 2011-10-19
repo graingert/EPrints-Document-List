@@ -31,7 +31,9 @@
 		<script>
 			$( function(){
 				$( 'ul' ).each(
-					$(this).jcoverflip();
+					function(index){
+						$(this).jcoverflip()
+					}
 				)
 			})
     </script>
