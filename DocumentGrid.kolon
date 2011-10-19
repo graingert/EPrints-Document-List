@@ -7,11 +7,11 @@
 	<body>
 		<dl>
 		: for $eprints -> $eprint {
-			<dt><: $eprint.get_value("title") :></dt>
+			<dt id="<: $eprint.id :>"><: $eprint.title :></dt>
 			<dd>
 				<ul>
-				: for $eprint.get_all_documents() -> $doc {
-					<li><img src="<: $doc.thumbnail_url('preview') :>"/></li>
+				: for $eprint.documents -> $doc {
+					<li><img src="<: $doc.img :>"/></li>
 				: }
 				</ul>
 			</dd>
