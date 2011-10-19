@@ -19,7 +19,7 @@
 			<dd>
 				<ul>
 				: for $eprint.documents -> $doc {
-					<li><img src="<: $doc.img :>"/></li>
+					<li><img src="<: $doc.img :>"/><span class="title">Title</span></li>
 				: }
 				</ul>
 			</dd>
