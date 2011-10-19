@@ -13,20 +13,13 @@
 		<title>EPrints Document Grid</title>
 	</head>
 	<body>
-		<ul id="flip">
-			<li><span class="title">The first image</span><img src="1.png" /></li>
-			<li><span class="title">A second image</span><img src="2.png" /></li>
-			<li><span class="title">This is the description</span><img src="5.png" /></li>
-			<li><span class="title">Another description</span><img src="4.png" /></li>
-			<li><span class="title">A title for the image</span><img src="3.png" /></li>
-		</ul>
 		<dl>
 		: for $eprints -> $eprint {
 			<dt id="<: $eprint.id :>"><: $eprint.title :></dt>
 			<dd>
 				<ul>
 				: for $eprint.documents -> $doc {
-					<li><span class="title">Title</span><img src="<: $doc.img :>"/></li>
+					<li><span class="title"><img src="<: $doc.img :>"/></span></li>
 				: }
 				</ul>
 			</dd>
@@ -34,11 +27,11 @@
 		</dl>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="http://www.jcoverflip.com/files/jcoverflip/jquery.jcoverflip.js"></script>
+		<script type="text/javascript" src="/javascript/jquery.jcoverflip.js"></script>
 		<script>
 			$( function(){
-				$( '#flip' ).jcoverflip();
-			})
+				$( 'ul' ).jcoverflip();
+			});
     </script>
 	</body>
 </html>
