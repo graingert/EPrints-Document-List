@@ -15,11 +15,11 @@
 	<body>
 		<dl>
 		: for $eprints -> $eprint {
-			<dt id="<: $eprint.id :>"><: $eprint.title :></dt>
+			<dt id="<: $eprint.id :>"><a href="<: $eprint.url :>"><: $eprint.title :></a></dt>
 			<dd>
 				<ul>
 				: for $eprint.documents -> $doc {
-					<li><span class="title"><img src="<: $doc.img :>"/></span></li>
+					<li><a href="<: $doc.preview :>"><span class="title"></span><img src="<: $doc.img :>"/></a></li>
 				: }
 				</ul>
 			</dd>
@@ -27,11 +27,5 @@
 		</dl>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="/javascript/jquery.jcoverflip.js"></script>
-		<script>
-			$( function(){
-				$( 'ul' ).jcoverflip();
-			});
-    </script>
 	</body>
 </html>

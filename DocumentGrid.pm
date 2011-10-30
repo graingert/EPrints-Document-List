@@ -41,11 +41,13 @@ sub output_list
 		foreach my $doc ($eprint->get_all_documents()){
 			push @documents, {
 				img => $doc->thumbnail_url("preview"),
+				preview => $doc->render_preview_link(),
 			};
 		}
 		push @eprints, {
 			id => $eprint->get_id(),
 			title => $eprint->get_value("title"),
+			url => $eprint->get_url()
 			documents => \@documents,
 		};
 	}
