@@ -53,6 +53,7 @@ sub output_list
 			title => $eprint->get_value("title"),
 			url => $eprint->get_url(),
 			creators => EPrints::Utils::tree_to_utf8( $eprint->render_value('creators_name') ),
+			abstract => $eprint->get_value("abstract"),
 			documents => \@documents,
 		};
 	}

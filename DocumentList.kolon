@@ -86,6 +86,9 @@
 						</li>
 					: }
 					</ul>
+				<aside>
+					<p class="abstract"><: $eprint.abstract :></p>
+				</aside>
 				</article>
 			</li>
 		: }
