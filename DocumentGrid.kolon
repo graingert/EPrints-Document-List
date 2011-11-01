@@ -40,7 +40,7 @@
 				padding: 4px;
 			}
 			.document figure{
-				background: none repeat scroll 0 0 #1B1BB3;
+				background: none repeat scroll 0 0 #FF9200;
 				margin: 0 2px;
 				min-height: 325px;
 				min-width: 214px;
@@ -50,7 +50,7 @@
 			.document figcaption {
 				font-size: 80%;
 				text-align: center;
-				color: #BF8230;
+				color: black;
 			}
 		</style>
 	</head>
