@@ -26,14 +26,14 @@
 			.eprint {
 				background: none repeat scroll 0 0 #66A3D2;
 				border: 1px solid #000000;
-				border-radius: 8px 8px 8px 8px;
+				/*border-radius: 8px 8px 8px 8px;*/
 				margin: 8px;
 				padding: 4px;
 			}
 			
 			.eprint header {
 				background: none repeat scroll 0 0 #1B1BB3;
-				border-radius: 8px 8px 8px 8px;
+				/*border-radius: 8px 8px 8px 8px;*/
 				color: #66A3D2;
 				display: block;
 				margin: 2px;
@@ -41,7 +41,7 @@
 			}
 			.document figure{
 				background: none repeat scroll 0 0 #1B1BB3;
-				border-radius: 8px 8px 8px 8px;
+				/*border-radius: 8px 8px 8px 8px;*/
 				margin: 0 2px;
 				min-height: 325px;
 				min-width: 214px;
