@@ -1,13 +1,17 @@
 EPrints Document List
 =====================
-This code is made from a Perl module, DocumentGrid.pm and an XSlate2
-template file DocumentGrid.kolon
+Because this code uses the Model View Template software architecture to 
+isolate visual design from view logic. This code is made from multiple
+files:
+1. Perl module, DocumentGrid.pm
+2. an XSlate2 template file DocumentGrid.kolon
 
 NOTE: Multiple files mean that they are contained in an application/zip
 
-The Perl module iterates through an eprint list pulling interesting
-information about the eprint and then about the documents in each
-eprint.
+The Perl module "View" iterates through an eprint list "Model" pulling
+interesting information about the eprint and then about the documents in
+each eprint. This data is formatted into an array and sent to the Xslate
+template renderer.
 
 [Fork Me On Github](https://github.com/graingert/Eprints-DocGrid "Eprints-DocGrid git repository")
 
