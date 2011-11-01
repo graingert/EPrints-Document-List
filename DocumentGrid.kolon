@@ -65,7 +65,12 @@
 						<li class="document">
 							<figure>
 								<a href="<: $doc.url :>">
-									<img src="<: $doc.img :>"/>
+									: if $doc.img {
+										<img src="<: $doc.img :>"/>
+									: }
+									: else {
+										<span class="no-preview">Sorry, no preview image</span>
+									: }
 								</a>
 								<figcaption>
 									<span class="type"><: $doc.type :></span>
