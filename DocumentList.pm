@@ -4,7 +4,7 @@ use Unicode::String qw( utf8 );
 
 use EPrints::Plugin::Export;
 use Text::Xslate;
-use Eprints::Utils;
+use EPrints::Utils;
 use File::Basename;
 
 @ISA = qw( EPrints::Plugin::Export);
