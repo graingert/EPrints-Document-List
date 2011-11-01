@@ -3,8 +3,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>EPrints Document List</title>
 		<style type="text/css">
+			a:link {color:#66A3D2;} 
 			.eprint {
-				background: none repeat scroll 0 0 #EEEEEE;
+				background: none repeat scroll 0 0 #66A3D2;
 				border: 1px solid #000000;
 				border-radius: 8px 8px 8px 8px;
 				margin: 8px;
@@ -12,15 +13,15 @@
 			}
 			
 			.eprint header {
-				background: none repeat scroll 0 0 #333333;
+				background: none repeat scroll 0 0 #1B1BB3;
 				border-radius: 8px 8px 8px 8px;
-				color: #EEEEEE;
+				color: #66A3D2;
 				display: block;
 				margin: 2px;
 				padding: 4px;
 			}
 			.document {
-				background: none repeat scroll 0 0 #333333;
+				background: none repeat scroll 0 0 #1B1BB3;
 				border-radius: 8px 8px 8px 8px;
 				display: inline-block;
 				margin: 0 2px;
