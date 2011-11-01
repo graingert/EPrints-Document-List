@@ -3,7 +3,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>EPrints Document List</title>
 		<style type="text/css">
-			a:link {color:#66A3D2;} 
+			a:link {color:#66A3D2;}
+			a:visited {color:#007241;}
 			.eprint {
 				background: none repeat scroll 0 0 #66A3D2;
 				border: 1px solid #000000;
