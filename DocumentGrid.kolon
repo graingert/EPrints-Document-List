@@ -42,8 +42,6 @@
 			.document figure{
 				background: none repeat scroll 0 0 #FF9200;
 				margin: 0 2px;
-				min-height: 325px;
-				min-width: 214px;
 				padding: 4px;
 			}
 			
