@@ -68,7 +68,7 @@
 									: if $doc.img {
 										<img src="<: $doc.img :>"/>
 									: } else {
-										<img src="http://descargarjuegosparapsp.byte.pk/wp-content/themes/shuffle/img/no-pre.png" />
+										<img src="http://dl.dropbox.com/u/1353167/no-pre.png" />
 									: }
 								</a>
 								<figcaption>
