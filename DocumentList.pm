@@ -57,7 +57,7 @@ sub output_list
 			documents => \@documents,
 		};
 	}
-	#Reference the template and render the array
+	#render the array with the template
 	my $content = $xslate->render("DocumentList.kolon", {
 		eprints => \@eprints,
 	});
