@@ -47,7 +47,7 @@ sub output_list
 		push @eprints, {
 			id => $eprint->get_id(),
 			title => $eprint->get_value("title"),
-			url => $eprint->get_url()
+			url => $eprint->get_url(),
 			documents => \@documents,
 		};
 	}
