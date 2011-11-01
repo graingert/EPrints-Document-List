@@ -31,6 +31,6 @@ Screenshots
 -----------
 Some screenshots showing the output:
 
-1. <img src="http://dl.dropbox.com/u/1353167/Eprints/a_few_documents.png"/>
-2. <img src="http://dl.dropbox.com/u/1353167/Eprints/sometimes_eprints_have_no_previews.png"/>
+1. ![A few documents](http://dl.dropbox.com/u/1353167/Eprints/a_few_documents.png)
+2. ![Sometimes eprints have no previews](http://dl.dropbox.com/u/1353167/Eprints/sometimes_eprints_have_no_previews.png)
 
