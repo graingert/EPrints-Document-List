@@ -2,21 +2,32 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>EPrints Document List</title>
+		<style type="text/css">
+			hr {color:sienna;}
+			p {margin-left:20px;}
+			body {background-image:url("images/back40.gif");}
+		</style>
 	</head>
 	<body>
-		<dl>
+		<ol class="eprints">
 		: for $eprints -> $eprint {
-			<dt id="<: $eprint.id :>"><a href="<: $eprint.url :>"><: $eprint.title :></a></dt>
-			<dd>
-				<ul>
-				: for $eprint.documents -> $doc {
-					<li><a href="<: $doc.preview :>"><span class="title"></span><img src="<: $doc.img :>"/></a></li>
-				: }
-				</ul>
-			</dd>
+			<li>
+				<article id="<: $eprint.id :>" class="eprint">
+				<header><h2><a href="<: $eprint.url :>"><: $eprint.title :></a></h2></header>
+					<ul class="documents">
+					: for $eprint.documents -> $doc {
+						<li class="document">
+							<a href="<: $doc.url :>">
+								<span class="title"></span>
+								<img src="<: $doc.img :>"/>
+							</a>
+							<span class="type"><: $doc.type :></span>
+						</li>
+					: }
+					</ul>
+				</article>
+			</li>
 		: }
-		</dl>
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+		</ol>
 	</body>
 </html>
