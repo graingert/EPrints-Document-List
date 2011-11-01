@@ -11,6 +11,17 @@
 				padding: 0px;
 				margin: 0px;
 			}
+			
+			ul.documents{
+				list-style-type: none;
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			ul.documents li{
+				display: inline-block;
+			}
+
 			.eprint {
 				background: none repeat scroll 0 0 #66A3D2;
 				border: 1px solid #000000;
@@ -30,7 +41,6 @@
 			.document figure{
 				background: none repeat scroll 0 0 #1B1BB3;
 				border-radius: 8px 8px 8px 8px;
-				display: inline-block;
 				margin: 0 2px;
 				min-height: 325px;
 				min-width: 214px;
