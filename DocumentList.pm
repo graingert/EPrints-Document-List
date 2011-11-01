@@ -46,6 +46,7 @@ sub output_list
 				img => $doc->thumbnail_url("preview"),
 				url => $doc->get_url(),
 				type => $doc->get_type(),
+				caption => EPrints::Utils::tree_to_utf8($doc-caption_frag()),
 			};
 		}
 		push @eprints, {
