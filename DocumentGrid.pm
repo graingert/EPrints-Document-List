@@ -35,9 +35,12 @@ sub new
 sub output_list
 {
 	my ($plugin, %opts) = @_;
+	#Create a format suitable for the template
 	my @eprints;
+	# Iterate through the output list and pull out interesting data
 	foreach my $eprint ($opts{list}->get_records()){
 		my @documents;
+		# Iterate though the documents in an eprint and add interesting data
 		foreach my $doc ($eprint->get_all_documents()){
 			push @documents, {
 				img => $doc->thumbnail_url("preview"),
@@ -52,14 +55,16 @@ sub output_list
 			documents => \@documents,
 		};
 	}
-
+	#Reference the template and render the array
 	my $content = $xslate->render("DocumentGrid.kolon", {
 		eprints => \@eprints,
 	});
 	
+	#If there is a file handle print to it
 	if (defined $opts{fh}){
 		print {$opts{fh}} $content;
 	}
+	#otherwise return the content
 	return $content;
 }
 
