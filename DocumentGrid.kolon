@@ -5,6 +5,7 @@
 		<title>EPrints Document List</title>
 		<style type="text/css">
 			/* Using style from http://colorschemedesigner.com/#3x61Tw0w0w0w0 */
+			/* Used some css from ds24g09 */
 			a:link {color:#66A3D2;}
 			a:visited {color:#007241;}
 			ol.eprints{
