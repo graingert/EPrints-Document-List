@@ -3,9 +3,34 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>EPrints Document List</title>
 		<style type="text/css">
-			hr {color:sienna;}
-			p {margin-left:20px;}
-			body {background-image:url("images/back40.gif");}
+			.eprint {
+				background: none repeat scroll 0 0 #EEEEEE;
+				border: 1px solid #000000;
+				border-radius: 8px 8px 8px 8px;
+				margin: 8px;
+				padding: 4px;
+			}
+			
+			.eprint header {
+				background: none repeat scroll 0 0 #333333;
+				border-radius: 8px 8px 8px 8px;
+				color: #EEEEEE;
+				display: block;
+				margin: 2px;
+				padding: 4px;
+			}
+			.document {
+				background: none repeat scroll 0 0 #333333;
+				border-radius: 8px 8px 8px 8px;
+				display: inline-block;
+				margin: 0 2px;
+				min-height: 325px;
+				min-width: 214px;
+				padding: 4px;
+				position: relative;
+				text-decoration: none;
+				vertical-align: bottom;
+			}
 		</style>
 	</head>
 	<body>
