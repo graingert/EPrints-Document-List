@@ -21,6 +21,7 @@ This code depends on Text::Xslate from CPAN
 
 Intersting Output
 -----------------
+Links to example exports:
 1. [A small example showing a few eprints](http://kanga-tag1g09.ecs.soton.ac.uk/cgi/exportview/creators/Al-Huseiny=3AMuayed=3A=3A/DocumentGrid/Al-Huseiny=3AMuayed=3A=3A.html)
 2. [A large example showing every eprint from 2008](http://kanga-tag1g09.ecs.soton.ac.uk/cgi/exportview/year/2008/DocumentGrid/2008.html)
 
