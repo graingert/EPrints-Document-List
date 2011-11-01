@@ -64,7 +64,6 @@
 				<article id="<: $eprint.id :>" class="eprint">
 				<header>
 					<h2><a href="<: $eprint.url :>"><: $eprint.title :></a></h2>
-					<br />
 					<span class="creators"><: $eprint.creators:></span>
 				</header>
 					
