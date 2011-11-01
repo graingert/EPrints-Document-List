@@ -11,6 +11,7 @@
 				border-radius: 8px 8px 8px 8px;
 				margin: 8px;
 				padding: 4px;
+				display: inline-block;
 			}
 			
 			.eprint header {
@@ -33,6 +34,11 @@
 				text-decoration: none;
 				vertical-align: bottom;
 			}
+			
+			.document figcaption {
+				font-size: 80%;
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body>
@@ -44,11 +50,14 @@
 					<ul class="documents">
 					: for $eprint.documents -> $doc {
 						<li class="document">
-							<a href="<: $doc.url :>">
-								<span class="title"></span>
-								<img src="<: $doc.img :>"/>
-							</a>
-							<span class="type"><: $doc.type :></span>
+							<figure>
+								<a href="<: $doc.url :>">
+									<img src="<: $doc.img :>"/>
+								</a>
+								<figcaption>
+									<span class="type"><: $doc.type :></span>
+								</figcaption>
+							</figure>
 						</li>
 					: }
 					</ul>
