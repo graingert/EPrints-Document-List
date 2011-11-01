@@ -67,9 +67,8 @@
 								<a href="<: $doc.url :>">
 									: if $doc.img {
 										<img src="<: $doc.img :>"/>
-									: }
-									: else {
-										<span class="no-preview">Sorry, no preview image</span>
+									: } else {
+										<img src="http://descargarjuegosparapsp.byte.pk/wp-content/themes/shuffle/img/no-pre.png" />
 									: }
 								</a>
 								<figcaption>
