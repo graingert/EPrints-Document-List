@@ -58,7 +58,7 @@
 		: for $eprints -> $eprint {
 			<li>
 				<article id="<: $eprint.id :>" class="eprint">
-				<a href="<: $eprint.url :>"><header><h2><: $eprint.title :></h2></header></a>
+				<header><h2><a href="<: $eprint.url :>"><: $eprint.title :></a></h2></header>
 					<ul class="documents">
 					: for $eprint.documents -> $doc {
 						<li class="document">
