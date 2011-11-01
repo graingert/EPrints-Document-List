@@ -5,13 +5,17 @@
 		<style type="text/css">
 			a:link {color:#66A3D2;}
 			a:visited {color:#007241;}
+			ol.eprints{
+				list-style-type: none;
+				padding: 0px;
+				margin: 0px;
+			}
 			.eprint {
 				background: none repeat scroll 0 0 #66A3D2;
 				border: 1px solid #000000;
 				border-radius: 8px 8px 8px 8px;
 				margin: 8px;
 				padding: 4px;
-				display: inline-block;
 			}
 			
 			.eprint header {
