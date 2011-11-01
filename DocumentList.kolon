@@ -59,6 +59,7 @@
 			<li>
 				<article id="<: $eprint.id :>" class="eprint">
 				<header><h2><a href="<: $eprint.url :>"><: $eprint.title :></a></h2></header>
+					<span class="creators"><: $eprint.creators:></span>
 					<ul class="documents">
 					: for $eprint.documents -> $doc {
 						<li class="document">

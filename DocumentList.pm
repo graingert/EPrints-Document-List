@@ -4,7 +4,7 @@ use Unicode::String qw( utf8 );
 
 use EPrints::Plugin::Export;
 use Text::Xslate;
-
+use Eprints::Utils;
 use File::Basename;
 
 @ISA = qw( EPrints::Plugin::Export);
@@ -52,6 +52,7 @@ sub output_list
 			id => $eprint->get_id(),
 			title => $eprint->get_value("title"),
 			url => $eprint->get_url(),
+			creators => EPrints::Utils::tree_to_utf8( $dataobj->render_value('creators_name') );,
 			documents => \@documents,
 		};
 	}
