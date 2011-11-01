@@ -27,7 +27,7 @@
 				margin: 2px;
 				padding: 4px;
 			}
-			.document {
+			.document figure{
 				background: none repeat scroll 0 0 #1B1BB3;
 				border-radius: 8px 8px 8px 8px;
 				display: inline-block;
