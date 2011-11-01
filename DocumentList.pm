@@ -1,4 +1,4 @@
-package EPrints::Plugin::Export::DocumentGrid;
+package EPrints::Plugin::Export::DocumentList;
 
 use Unicode::String qw( utf8 );
 
@@ -21,7 +21,7 @@ sub new
 
 	my $self = $class->SUPER::new( %opts );
 
-	$self->{name} = "Document Grid";
+	$self->{name} = "Document List";
 	$self->{accept} = [ 'list/eprint' ];
 
 	$self->{visible} = "all";
@@ -56,7 +56,7 @@ sub output_list
 		};
 	}
 	#Reference the template and render the array
-	my $content = $xslate->render("DocumentGrid.kolon", {
+	my $content = $xslate->render("DocumentList.kolon", {
 		eprints => \@eprints,
 	});
 	

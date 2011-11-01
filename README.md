@@ -4,8 +4,8 @@ Because this code uses the Model View Template software architecture to
 isolate visual design from view logic. This code is made from multiple
 files:
 
-1. Perl module, DocumentGrid.pm
-2. an XSlate2 template file DocumentGrid.kolon
+1. Perl module, DocumentList.pm
+2. an XSlate2 template file DocumentList.kolon
 
 NOTE: Multiple files mean that they are contained in an application/zip
 
@@ -14,7 +14,7 @@ interesting information about the eprint and then about the documents in
 each eprint. This data is formatted into an array and sent to the Xslate
 template renderer.
 
-[Fork Me On Github](https://github.com/graingert/Eprints-DocGrid "Eprints-DocGrid git repository")
+[Fork Me On Github](https://github.com/graingert/EPrints-Document-List "EPrints Document List git repository")
 
 Dependancies
 ------------
